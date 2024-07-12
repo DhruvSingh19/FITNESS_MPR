@@ -32,21 +32,39 @@ _loadSettings() async {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
+        leading: Builder(
+            builder: (context) {
+              return IconButton(
+                iconSize: 30,
+                color: Colors.deepPurple.shade100,
+                icon: Icon(Icons.menu),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            }
+        ),
+        title: Padding(
+          padding: const EdgeInsets.fromLTRB(95, 0, 0, 0),
+          child: Text("U-FIT",style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold,color: Colors.deepPurple.shade100),),
+        ),
+      ),
      body:
-     Column(
-       mainAxisAlignment: MainAxisAlignment.center,
-       children: [
-         Text("hello"),
-         Text(name),
-         Text(age),
-         Text(gender),
-         Text(height),
-         ElevatedButton(
-             onPressed: () {
-            signoutuser(context);
-    }
-         , child: Text("logout"))
-       ],
+     Center(
+       child: Column(
+         mainAxisAlignment: MainAxisAlignment.center,
+         children: [
+           const Text("SIGN OUT"),
+           Text(name +" "+ age, style: const TextStyle(fontWeight: FontWeight.bold)),
+           ElevatedButton(
+               onPressed: () {
+              signoutuser(context);
+           }
+           , child: Text("logout"))
+         ],
+       ),
      ) ,
     );
   }

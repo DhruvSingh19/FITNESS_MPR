@@ -8,9 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 void main() {
   runApp(MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_)=>UserProvider()),
+    ChangeNotifierProvider(create: (_)=>UserProvider()),
   ],
-  child: const MyApp()));
+      child: const MyApp()));
 }
 
 class MyApp extends StatefulWidget {
@@ -32,13 +32,13 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      debugShowCheckedModeBanner: false,
-      home:
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        debugShowCheckedModeBanner: false,
+        home:
         SplashScreen()
       //Provider.of<UserProvider>(context).user.token.isEmpty ? const SignupScreen() : const HomeScreen(),
     );
@@ -49,7 +49,7 @@ class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
 
   @override
-   State<SplashScreen> createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
@@ -59,13 +59,13 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Timer(
-      const Duration(seconds: 2), 
+      const Duration(seconds: 2),
           () {
-        as.getUserData(context); 
+        as.getUserData(context);
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => Provider.of<UserProvider>(context).user.token.isEmpty
-                ? const SignupScreen()
+                ? const HomeScreen()
                 : const HomeScreen(),
           ),
         );

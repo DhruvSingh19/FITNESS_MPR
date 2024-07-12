@@ -71,7 +71,6 @@ class setofquestions_screen extends State<setofquestions>{
                 value: gender,
                 items: [DropdownMenuItem<String>(child: Text("Male"),value: 'Male',),
                   DropdownMenuItem<String>(child: Text("Female"),value: "Female",),
-                  DropdownMenuItem<String>(child: Text("Transgender"),value: "Transgender",),
                 ],
                 onChanged: (String? newvalue){
                   setState(() {
@@ -87,17 +86,17 @@ class setofquestions_screen extends State<setofquestions>{
               hint: Text("Select your height",style: TextStyle(color: Colors.white)),
               value: height,
               items: [
-                DropdownMenuItem(child: Text("15"), value: 15.0),
-                DropdownMenuItem(child: Text("16"), value: 16.0),
-                DropdownMenuItem(child: Text("17"), value: 17.0),
-                DropdownMenuItem(child: Text("18"), value: 18.0),
-                DropdownMenuItem(child: Text("19"), value: 19.0),
-                DropdownMenuItem(child: Text("20"), value: 20.0),
-                DropdownMenuItem(child: Text("21"), value: 21.0),
-                DropdownMenuItem(child: Text("22"), value: 22.0),
-                DropdownMenuItem(child: Text("23"), value: 23.0),
-                DropdownMenuItem(child: Text("24"), value: 24.0),
-                DropdownMenuItem(child: Text("25"), value: 25.0),
+                DropdownMenuItem(child: Text("175"), value: 175.0),
+                DropdownMenuItem(child: Text("176"), value: 176.0),
+                DropdownMenuItem(child: Text("177"), value: 177.0),
+                DropdownMenuItem(child: Text("178"), value: 178.0),
+                DropdownMenuItem(child: Text("179"), value: 179.0),
+                DropdownMenuItem(child: Text("180"), value: 180.0),
+                DropdownMenuItem(child: Text("182"), value: 181.0),
+                DropdownMenuItem(child: Text("183"), value: 182.0),
+                DropdownMenuItem(child: Text("184"), value: 183.0),
+                DropdownMenuItem(child: Text("185"), value: 184.0),
+                DropdownMenuItem(child: Text("186"), value: 185.0),
               ],
               onChanged: (double? newValue) {
                 setState(() {
@@ -130,8 +129,6 @@ class setofquestions_screen extends State<setofquestions>{
             SizedBox(
               height: 20,
             ),
-
-
            // ElevatedButton(
            //    onPressed: ()async {
            //      if(age==null||gender==null||height==null){

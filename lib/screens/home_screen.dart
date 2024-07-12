@@ -20,7 +20,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   PageController _pageController = PageController();
-  List<Widget> _screens = [Screen_home(),progress_screen(),training_screen(),settings_screen()];
+  List<Widget> _screens = [Screen_home(),progress_screen(),training_screen()];
   int _selectedindex=0;
 
   void _onpagechanged(int index){
@@ -77,7 +77,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 iconSize: 30,
                 color: Colors.deepPurple.shade100,
                 icon: Icon(Icons.person),
-                onPressed: () {  },
+                onPressed: () {
+                  Navigator.push(context,
+                  MaterialPageRoute(builder: (context)=>settings_screen()));
+                },
               ),
             ),
           ],
@@ -122,17 +125,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ],
                 )),
           ),
-          Padding(
-            padding: const EdgeInsets.fromLTRB(0,20,0,0),
-            child: Container(
-                height: 55,
-                child: Column(
-                  children: [
-                    Icon(Icons.settings,color: Colors.deepPurple.shade100,),
-                    Text("Settings",style: TextStyle(color: Colors.deepPurple.shade100),)
-                  ],
-                )),
-          ),
+
         ],
         onTap: _onitemtapped,
       ),
@@ -149,6 +142,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   leading: Icon(Icons.home,color: Colors.deepPurple.shade100,size: 40,),
                   title: Text("Home",style: TextStyle(fontSize: 25,color: Colors.deepPurple.shade100),),
                   onTap: (){
+                    Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>HomeScreen()));
                   },
                 ),
                 // ListTile(
